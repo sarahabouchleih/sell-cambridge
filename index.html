@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sell Your Home in Cambridge</title>
-  <meta name="description" content="Thinking of selling your home in Cambridge? Submit your address for a private response within 24 hours." />
+  <title>Cambridge Home Offer</title>
+  <meta name="description" content="Thinking of selling your home in Cambridge? Get a private answer within 24 hours." />
   <style>
     :root{
       --bg:#0b1220;
@@ -13,36 +13,37 @@
       --text:#0b1220;
       --muted:#64748b;
       --border:#e5e7eb;
-      --ring:rgba(59,130,246,.22);
-      --shadow: 0 18px 50px rgba(0,0,0,.28);
+      --ring:rgba(59,130,246,.25);
+      --shadow: 0 22px 60px rgba(0,0,0,.28);
       --radius: 18px;
       --accent:#2563eb;
       --accent2:#111827;
+      --good:#22c55e;
     }
     *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: #e5e7eb;
+      color:#e5e7eb;
       background:
-        radial-gradient(900px 500px at 15% 10%, rgba(37,99,235,.35), rgba(37,99,235,0) 60%),
-        radial-gradient(900px 500px at 85% 20%, rgba(34,197,94,.18), rgba(34,197,94,0) 55%),
+        radial-gradient(900px 520px at 12% 8%, rgba(37,99,235,.35), rgba(37,99,235,0) 60%),
+        radial-gradient(900px 520px at 88% 18%, rgba(34,197,94,.18), rgba(34,197,94,0) 55%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       min-height: 100vh;
     }
 
-    /* top bar */
+    /* Top bar */
     .topbar{
       position: sticky;
       top: 0;
+      z-index: 10;
       backdrop-filter: blur(10px);
       background: rgba(11,18,32,.55);
       border-bottom: 1px solid rgba(255,255,255,.08);
-      z-index: 10;
     }
     .topbar .inner{
-      max-width: 1120px;
-      margin: 0 auto;
+      max-width: 1140px;
+      margin:0 auto;
       padding: 14px 18px;
       display:flex;
       align-items:center;
@@ -53,15 +54,16 @@
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: .2px;
     }
-    .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(37,99,235,.18);
+    .logo{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      background: rgba(37,99,235,.95);
+      box-shadow: 0 0 0 6px rgba(37,99,235,.16);
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
     }
     .pill{
       font-size: 12px;
@@ -73,44 +75,41 @@
       white-space: nowrap;
     }
 
-    /* hero layout */
+    /* Layout */
     .wrap{
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 42px 18px 80px;
+      padding: 44px 18px 86px;
     }
     .grid{
       display:grid;
-      grid-template-columns: 1.2fr .9fr;
-      gap: 28px;
-      align-items: start;
+      grid-template-columns: 1.25fr .95fr;
+      gap: 30px;
+      align-items:start;
     }
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
 
     h1{
       margin: 0 0 10px;
-      font-size: 44px;
-      line-height: 1.05;
+      font-size: 46px;
+      line-height: 1.04;
       letter-spacing: -0.02em;
     }
-    @media (max-width: 520px){
-      h1{ font-size: 34px; }
-    }
+    @media (max-width: 520px){ h1{ font-size: 34px; } }
+
     .sub{
       margin: 0 0 18px;
       font-size: 18px;
       line-height: 1.5;
       color: #cbd5e1;
-      max-width: 54ch;
+      max-width: 60ch;
     }
 
     .badges{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
-      margin: 18px 0 8px;
+      gap: 10px;
+      margin: 18px 0 10px;
     }
     .badge{
       font-size: 13px;
@@ -127,7 +126,7 @@
       list-style: none;
       display:grid;
       gap: 10px;
-      max-width: 70ch;
+      max-width: 74ch;
     }
     .list li{
       display:flex;
@@ -145,7 +144,7 @@
       align-items:center;
       justify-content:center;
       flex: 0 0 auto;
-      margin-top: 1px;
+      margin-top: 2px;
     }
     .check:before{
       content:"✓";
@@ -155,7 +154,7 @@
       transform: translateY(-.5px);
     }
 
-    /* form card */
+    /* Form card */
     .card{
       background: var(--card);
       color: var(--text);
@@ -170,7 +169,7 @@
       content:"";
       position:absolute;
       inset: 0;
-      background: radial-gradient(600px 220px at 30% 0%, rgba(37,99,235,.10), rgba(37,99,235,0) 60%);
+      background: radial-gradient(700px 260px at 30% 0%, rgba(37,99,235,.11), rgba(37,99,235,0) 60%);
       pointer-events:none;
     }
     .card-inner{ position: relative; }
@@ -192,7 +191,7 @@
       font-size: 12px;
       color: #334155;
       margin: 10px 0 6px;
-      font-weight: 700;
+      font-weight: 800;
     }
     input{
       width: 100%;
@@ -208,17 +207,12 @@
       box-shadow: 0 0 0 4px var(--ring);
     }
 
-    .cats{
-      margin-top: 10px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
+    .cats{ margin-top: 10px; display:grid; gap: 10px; }
     .cat{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 10px;
+      gap: 12px;
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 12px 12px;
@@ -230,18 +224,10 @@
       border-color: rgba(37,99,235,.35);
       box-shadow: 0 0 0 4px rgba(37,99,235,.10);
     }
-    .cat strong{
-      font-size: 14px;
-      color: #0f172a;
-    }
-    .cat span{
-      font-size: 12px;
-      color: #64748b;
-    }
+    .cat strong{ font-size: 14px; color: #0f172a; }
+    .cat span{ font-size: 12px; color: #64748b; }
     .cat input{
-      width: 18px;
-      height: 18px;
-      margin: 0;
+      width: 18px; height: 18px; margin: 0;
       accent-color: var(--accent);
       flex: 0 0 auto;
     }
@@ -254,18 +240,11 @@
       border-radius: 14px;
       background: var(--accent2);
       color: #fff;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 16px;
       cursor: pointer;
     }
     .btn:hover{ opacity: .94; }
-
-    .fine{
-      margin-top: 10px;
-      font-size: 12px;
-      color: #64748b;
-      line-height: 1.4;
-    }
 
     .mini{
       display:flex;
@@ -281,15 +260,46 @@
       padding: 8px 10px;
       border-radius: 999px;
     }
+    .fine{
+      margin-top: 10px;
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.45;
+    }
 
-    /* footer */
+    /* Below-the-fold sections */
+    .section{
+      margin-top: 40px;
+      display:grid;
+      gap: 14px;
+    }
+    .section h3{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color:#e5e7eb;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 980px){ .cards{ grid-template-columns: 1fr; } }
+    .info{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 14px;
+      color:#cbd5e1;
+    }
+    .info b{ color:#fff; }
     .footer{
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 22px 18px 38px;
+      padding: 18px 18px 38px;
       color: rgba(226,232,240,.75);
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
   </style>
 </head>
@@ -298,8 +308,8 @@
   <div class="topbar">
     <div class="inner">
       <div class="brand">
-        <div class="dot"></div>
-        <div>Private Home Inquiry</div>
+        <div class="logo">CH</div>
+        <div>Cambridge Home Inquiry</div>
       </div>
       <div class="pill">Response within 24 hours</div>
     </div>
@@ -307,23 +317,24 @@
 
   <div class="wrap">
     <div class="grid">
-      <!-- LEFT: marketing -->
+      <!-- LEFT -->
       <div>
         <h1>Thinking of selling your home in Cambridge?</h1>
         <p class="sub">
-          Submit your info for a private response within 24 hours. No showings required to start.
+          Submit your address and contact info for a private response within 24 hours.
         </p>
 
         <div class="badges">
           <div class="badge">Private</div>
           <div class="badge">No obligation</div>
           <div class="badge">Local review</div>
+          <div class="badge">Fast response</div>
         </div>
 
         <ul class="list">
-          <li><span class="check"></span><span>Quick, simple first step — submit the address and your contact info.</span></li>
-          <li><span class="check"></span><span>We’ll review your property and follow up with next steps.</span></li>
-          <li><span class="check"></span><span>You’re never committed — you decide if you want to proceed.</span></li>
+          <li><span class="check"></span><span>Quick first step — share your address and contact info.</span></li>
+          <li><span class="check"></span><span>We’ll review and reach out with next steps within 24 hours.</span></li>
+          <li><span class="check"></span><span>You decide if you want to move forward. No pressure.</span></li>
         </ul>
       </div>
 
@@ -343,12 +354,12 @@
             <label for="phone">Phone number</label>
             <input id="phone" type="tel" name="phone_number" placeholder="(###) ###-####" required />
 
-            <label>Which best describes your situation?</label>
+            <label>Which best describes you?</label>
             <div class="cats">
               <label class="cat">
                 <div>
                   <strong>Just exploring</strong><br />
-                  <span>Not sure yet — want info</span>
+                  <span>Looking for options</span>
                 </div>
                 <input type="radio" name="category" value="Just exploring" required />
               </label>
@@ -363,10 +374,10 @@
 
               <label class="cat">
                 <div>
-                  <strong>Need to sell ASAP</strong><br />
-                  <span>Time-sensitive situation</span>
+                  <strong>Time-sensitive</strong><br />
+                  <span>Need a quick plan</span>
                 </div>
-                <input type="radio" name="category" value="Need to sell ASAP" />
+                <input type="radio" name="category" value="Time-sensitive" />
               </label>
             </div>
 
@@ -385,10 +396,20 @@
         </div>
       </div>
     </div>
+
+    <!-- BELOW THE FOLD -->
+    <div class="section">
+      <h3>How it works</h3>
+      <div class="cards">
+        <div class="info"><b>1) Submit</b><br/>Share your address + contact info.</div>
+        <div class="info"><b>2) Review</b><br/>We review your property and options.</div>
+        <div class="info"><b>3) Response</b><br/>We reach out within 24 hours.</div>
+      </div>
+    </div>
   </div>
 
   <div class="footer">
-    © <span id="y"></span> • Massachusetts • Private home inquiry page.
+    © <span id="y"></span> Massachusetts • Cambridge home inquiry page.
   </div>
 
   <script>
@@ -396,4 +417,5 @@
   </script>
 </body>
 </html>
+
 
