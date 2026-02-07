@@ -3,419 +3,532 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cambridge Home Offer</title>
-  <meta name="description" content="Thinking of selling your home in Cambridge? Get a private answer within 24 hours." />
+  <title>Cambridge Buyers</title>
+  <meta name="description" content="Sell your Cambridge home fast & with confidence. Get a private answer within 24 hours." />
+
+  <!-- Google Fonts (free) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b1220;
-      --bg2:#0f172a;
-      --card:#ffffff;
-      --text:#0b1220;
-      --muted:#64748b;
-      --border:#e5e7eb;
-      --ring:rgba(59,130,246,.25);
-      --shadow: 0 22px 60px rgba(0,0,0,.28);
+      --bg: #f4f1ec;
+      --ink: #0f172a;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 18px 55px rgba(0,0,0,.18);
+      --shadow2: 0 12px 40px rgba(0,0,0,.10);
       --radius: 18px;
-      --accent:#2563eb;
-      --accent2:#111827;
-      --good:#22c55e;
-    }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:#e5e7eb;
-      background:
-        radial-gradient(900px 520px at 12% 8%, rgba(37,99,235,.35), rgba(37,99,235,0) 60%),
-        radial-gradient(900px 520px at 88% 18%, rgba(34,197,94,.18), rgba(34,197,94,0) 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      min-height: 100vh;
+
+      --gold: #c7902e;
+      --nav: rgba(244,241,236,.92);
+
+      /* swap this hero image */
+      --hero-image: url("https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=70");
     }
 
-    /* Top bar */
-    .topbar{
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    /* container */
+    .container{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* nav */
+    .nav{
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 50;
+      background: var(--nav);
       backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.55);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(15,23,42,.08);
     }
-    .topbar .inner{
-      max-width: 1140px;
-      margin:0 auto;
-      padding: 14px 18px;
+    .nav-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
+      padding: 14px 0;
+      gap: 14px;
     }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight: 900;
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
       letter-spacing: .2px;
-    }
-    .logo{
-      width: 34px; height: 34px;
-      border-radius: 12px;
-      background: rgba(37,99,235,.95);
-      box-shadow: 0 0 0 6px rgba(37,99,235,.16);
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 900;
-    }
-    .pill{
-      font-size: 12px;
-      color: #cbd5e1;
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
+      font-size: 20px;
+      display:flex;
+      align-items:baseline;
+      gap: 0;
       white-space: nowrap;
     }
+    .brand .a{ color: #1f2937; }
+    .brand .b{ color: var(--gold); margin-left: 2px; }
 
-    /* Layout */
-    .wrap{
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 44px 18px 86px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: 1.25fr .95fr;
-      gap: 30px;
-      align-items:start;
-    }
-    @media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
-
-    h1{
-      margin: 0 0 10px;
-      font-size: 46px;
-      line-height: 1.04;
-      letter-spacing: -0.02em;
-    }
-    @media (max-width: 520px){ h1{ font-size: 34px; } }
-
-    .sub{
-      margin: 0 0 18px;
-      font-size: 18px;
-      line-height: 1.5;
-      color: #cbd5e1;
-      max-width: 60ch;
-    }
-
-    .badges{
+    .navlinks{
       display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin: 18px 0 10px;
-    }
-    .badge{
-      font-size: 13px;
-      color:#cbd5e1;
-      border: 1px solid rgba(255,255,255,.14);
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-    }
-
-    .list{
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-      display:grid;
-      gap: 10px;
-      max-width: 74ch;
-    }
-    .list li{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      color:#e2e8f0;
-    }
-    .check{
-      width: 18px;
-      height: 18px;
-      border-radius: 6px;
-      background: rgba(34,197,94,.18);
-      border: 1px solid rgba(34,197,94,.45);
-      display:inline-flex;
+      gap: 22px;
       align-items:center;
-      justify-content:center;
-      flex: 0 0 auto;
-      margin-top: 2px;
+      font-size: 14px;
     }
-    .check:before{
-      content:"✓";
-      font-size: 12px;
-      color: #86efac;
-      font-weight: 900;
-      transform: translateY(-.5px);
+    .navlinks a{
+      color: #334155;
+      text-decoration: none;
+      font-weight: 600;
+      opacity: .9;
+    }
+    .navlinks a:hover{ opacity: 1; text-decoration: underline; }
+
+    @media (max-width: 760px){
+      .navlinks{ display:none; }
     }
 
-    /* Form card */
-    .card{
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
+    /* hero */
+    .hero{
       position: relative;
+      min-height: 560px;
+      display:flex;
+      align-items: stretch;
+      background: #111;
       overflow: hidden;
     }
-    .card:before{
+    .hero::before{
       content:"";
       position:absolute;
-      inset: 0;
-      background: radial-gradient(700px 260px at 30% 0%, rgba(37,99,235,.11), rgba(37,99,235,0) 60%);
-      pointer-events:none;
+      inset:0;
+      background-image: var(--hero-image);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
     }
-    .card-inner{ position: relative; }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.40) 55%, rgba(0,0,0,.25) 100%);
+    }
 
-    .card h2{
-      margin: 6px 0 6px;
-      font-size: 20px;
+    .hero-inner{
+      position: relative;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      padding: 48px 0;
+      align-items: center;
+    }
+
+    @media (max-width: 980px){
+      .hero{ min-height: auto; }
+      .hero-inner{ grid-template-columns: 1fr; padding: 32px 0 46px; }
+    }
+
+    .kicker{
+      display:inline-block;
+      background: rgba(199,144,46,.95);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      letter-spacing: .02em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1{
+      font-family: "Playfair Display", serif;
+      margin: 0 0 14px;
+      font-size: 64px;
+      line-height: 1.02;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em{
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 700;
+    }
+    @media (max-width: 520px){
+      .hero h1{ font-size: 44px; }
+    }
+
+    .hero p{
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.82);
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 52ch;
+    }
+
+    .bullets{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      color: rgba(255,255,255,.80);
+      font-size: 14px;
+    }
+    .bullets span{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      opacity: .95;
+    }
+    .dot{
+      width: 6px; height: 6px; border-radius: 99px;
+      background: var(--gold);
+    }
+
+    /* form card */
+    .form-card{
+      background: var(--card);
+      border: 1px solid rgba(15,23,42,.10);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      align-self: center;
+    }
+    .form-card h2{
+      font-family: "Playfair Display", serif;
+      margin: 4px 0 6px;
+      font-size: 34px;
+      text-align:center;
       letter-spacing: -0.01em;
     }
-    .card p{
-      margin: 0 0 14px;
+    .form-card .sub{
+      margin: 0 0 18px;
+      text-align:center;
       color: var(--muted);
-      font-size: 14px;
       line-height: 1.45;
     }
 
     label{
       display:block;
-      font-size: 12px;
-      color: #334155;
-      margin: 10px 0 6px;
-      font-weight: 800;
+      font-weight: 700;
+      font-size: 14px;
+      color: #111827;
+      margin: 14px 0 8px;
     }
     input{
-      width: 100%;
-      padding: 13px 12px;
+      width:100%;
+      padding: 14px 14px;
       font-size: 16px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       outline: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,.04);
       background: #fff;
     }
     input:focus{
-      border-color: rgba(37,99,235,.55);
-      box-shadow: 0 0 0 4px var(--ring);
+      border-color: rgba(199,144,46,.55);
+      box-shadow: 0 0 0 4px rgba(199,144,46,.18);
     }
 
-    .cats{ margin-top: 10px; display:grid; gap: 10px; }
+    .cta{
+      width:100%;
+      margin-top: 18px;
+      padding: 18px 16px;
+      border: 0;
+      border-radius: 12px;
+      background: #22314f;
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(34,49,79,.25);
+    }
+    .cta:hover{ opacity: .95; }
+
+    .secure{
+      margin-top: 14px;
+      text-align:center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* categories */
+    .cat-title{
+      margin-top: 16px;
+      font-size: 13px;
+      color: #374151;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .cats{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
     .cat{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap: 12px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
       padding: 12px 12px;
-      background: #fff;
-      cursor: pointer;
-      transition: transform .05s ease, border-color .15s ease, box-shadow .15s ease;
-    }
-    .cat:hover{
-      border-color: rgba(37,99,235,.35);
-      box-shadow: 0 0 0 4px rgba(37,99,235,.10);
-    }
-    .cat strong{ font-size: 14px; color: #0f172a; }
-    .cat span{ font-size: 12px; color: #64748b; }
-    .cat input{
-      width: 18px; height: 18px; margin: 0;
-      accent-color: var(--accent);
-      flex: 0 0 auto;
-    }
-
-    .btn{
-      width: 100%;
-      margin-top: 12px;
-      padding: 14px 14px;
-      border: 0;
-      border-radius: 14px;
-      background: var(--accent2);
-      color: #fff;
-      font-weight: 900;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .btn:hover{ opacity: .94; }
-
-    .mini{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .mini .tag{
-      font-size: 12px;
-      color: #334155;
       border: 1px solid var(--border);
-      background: #f8fafc;
-      padding: 8px 10px;
-      border-radius: 999px;
+      border-radius: 12px;
+      background: #fff;
+      cursor:pointer;
     }
-    .fine{
-      margin-top: 10px;
-      font-size: 12px;
-      color: #64748b;
-      line-height: 1.45;
-    }
+    .cat:hover{ box-shadow: 0 0 0 4px rgba(34,49,79,.08); border-color: rgba(34,49,79,.25); }
+    .cat strong{ font-size: 14px; color:#0f172a; }
+    .cat span{ display:block; font-size: 12px; color:#6b7280; margin-top: 2px; }
+    .cat input{ width: 18px; height: 18px; margin: 0; accent-color: #22314f; box-shadow:none; }
 
-    /* Below-the-fold sections */
+    /* sections */
     .section{
-      margin-top: 40px;
-      display:grid;
-      gap: 14px;
+      padding: 64px 0;
+      background: #f6f3ee;
+      border-top: 1px solid rgba(15,23,42,.06);
     }
     .section h3{
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-      color:#e5e7eb;
+      font-family: "Playfair Display", serif;
+      text-align:center;
+      margin: 0 0 10px;
+      font-size: 46px;
+      letter-spacing: -0.02em;
+      color: #1f2937;
     }
+    .section .lead{
+      text-align:center;
+      color: #6b7280;
+      margin: 0 0 34px;
+      font-size: 18px;
+    }
+
     .cards{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 18px;
+      align-items: stretch;
     }
-    @media (max-width: 980px){ .cards{ grid-template-columns: 1fr; } }
-    .info{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      border-radius: 16px;
-      padding: 14px;
-      color:#cbd5e1;
+    @media (max-width: 980px){
+      .cards{ grid-template-columns: 1fr; }
     }
-    .info b{ color:#fff; }
-    .footer{
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 18px 18px 38px;
-      color: rgba(226,232,240,.75);
+    .card{
+      background: #fff;
+      border: 1px solid rgba(15,23,42,.08);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow2);
+      text-align:center;
+    }
+    .icon{
+      width: 66px; height: 66px;
+      border-radius: 999px;
+      background: rgba(34,49,79,.08);
+      margin: 0 auto 14px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      color: #22314f;
+      font-size: 22px;
+    }
+    .card h4{
+      font-family: "Playfair Display", serif;
+      margin: 8px 0 10px;
+      font-size: 22px;
+      color:#1f2937;
+    }
+    .card p{
+      margin: 0;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .trust-row{
+      display:flex;
+      gap: 22px;
+      justify-content:center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      color: #7c889b;
+      font-weight: 600;
+    }
+    .trust-row span{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .check2{
+      width: 18px; height: 18px; border-radius: 999px;
+      background: rgba(199,144,46,.18);
+      border: 1px solid rgba(199,144,46,.45);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color: #9a6b1d;
       font-size: 12px;
-      line-height: 1.55;
+      font-weight: 900;
     }
+
+    footer{
+      padding: 26px 0 46px;
+      color: #6b7280;
+      font-size: 12px;
+      text-align:center;
+      background: #f6f3ee;
+      border-top: 1px solid rgba(15,23,42,.06);
+    }
+
+    /* smooth anchor offset so the sticky nav doesn't cover headings */
+    .anchor{ scroll-margin-top: 88px; }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="inner">
-      <div class="brand">
-        <div class="logo">CH</div>
-        <div>Cambridge Home Inquiry</div>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand"><span class="a">Cambridge</span><span class="b">Buyers</span></div>
+        <div class="navlinks">
+          <a href="#how" class="anchor-link">How It Works</a>
+          <a href="#about" class="anchor-link">About Us</a>
+          <a href="#testimonials" class="anchor-link">Testimonials</a>
+        </div>
       </div>
-      <div class="pill">Response within 24 hours</div>
     </div>
   </div>
 
-  <div class="wrap">
-    <div class="grid">
-      <!-- LEFT -->
-      <div>
-        <h1>Thinking of selling your home in Cambridge?</h1>
-        <p class="sub">
-          Submit your address and contact info for a private response within 24 hours.
-        </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">#1 HOME BUYER IN CAMBRIDGE</div>
 
-        <div class="badges">
-          <div class="badge">Private</div>
-          <div class="badge">No obligation</div>
-          <div class="badge">Local review</div>
-          <div class="badge">Fast response</div>
+          <h1>Sell Your Cambridge<br/>Home <em>Fast</em> &amp; With<br/>Confidence.</h1>
+
+          <p>
+            Skip the open houses, repairs, and months of waiting.
+            We provide a private response within 24 hours so you can move forward on your timeline.
+          </p>
+
+          <div class="bullets">
+            <span><span class="dot"></span>No hidden fees</span>
+            <span><span class="dot"></span>No repairs needed</span>
+            <span><span class="dot"></span>Local Cambridge team</span>
+          </div>
         </div>
 
-        <ul class="list">
-          <li><span class="check"></span><span>Quick first step — share your address and contact info.</span></li>
-          <li><span class="check"></span><span>We’ll review and reach out with next steps within 24 hours.</span></li>
-          <li><span class="check"></span><span>You decide if you want to move forward. No pressure.</span></li>
-        </ul>
-      </div>
-
-      <!-- RIGHT: form -->
-      <div class="card">
-        <div class="card-inner">
-          <h2>Get a private answer</h2>
-          <p>Fill this out and we’ll reach out within 24 hours.</p>
+        <div class="form-card">
+          <h2>Get Your Offer Today</h2>
+          <div class="sub">Enter your details below to receive a no-obligation response on your Cambridge home.</div>
 
           <form action="https://formspree.io/f/xgolepaa" method="POST">
-            <label for="addr">Property address</label>
-            <input id="addr" type="text" name="property_address" placeholder="123 Main St, Cambridge, MA" required />
+            <label for="full_name">Full Name</label>
+            <input id="full_name" name="full_name" type="text" placeholder="John Doe" required>
 
-            <label for="name">Full name</label>
-            <input id="name" type="text" name="full_name" placeholder="Your full name" required />
+            <label for="property_address">Property Address</label>
+            <input id="property_address" name="property_address" type="text" placeholder="123 Main St, Cambridge" required>
 
-            <label for="phone">Phone number</label>
-            <input id="phone" type="tel" name="phone_number" placeholder="(###) ###-####" required />
+            <label for="phone_number">Phone Number</label>
+            <input id="phone_number" name="phone_number" type="tel" placeholder="(617) 555-0123" required>
 
-            <label>Which best describes you?</label>
+            <div class="cat-title">Category</div>
             <div class="cats">
               <label class="cat">
                 <div>
-                  <strong>Just exploring</strong><br />
-                  <span>Looking for options</span>
+                  <strong>Just exploring</strong>
+                  <span>Not sure yet — want info</span>
                 </div>
-                <input type="radio" name="category" value="Just exploring" required />
+                <input type="radio" name="category" value="Just exploring" required>
               </label>
 
               <label class="cat">
                 <div>
-                  <strong>Selling soon</strong><br />
+                  <strong>Selling soon</strong>
                   <span>Within ~30–60 days</span>
                 </div>
-                <input type="radio" name="category" value="Selling soon" />
+                <input type="radio" name="category" value="Selling soon">
               </label>
 
               <label class="cat">
                 <div>
-                  <strong>Time-sensitive</strong><br />
+                  <strong>Time-sensitive</strong>
                   <span>Need a quick plan</span>
                 </div>
-                <input type="radio" name="category" value="Time-sensitive" />
+                <input type="radio" name="category" value="Time-sensitive">
               </label>
             </div>
 
-            <button class="btn" type="submit">Get my answer</button>
-
-            <div class="mini">
-              <div class="tag">No obligation</div>
-              <div class="tag">Private</div>
-              <div class="tag">24-hr response</div>
-            </div>
-
-            <div class="fine">
-              We connect property owners with qualified buyers. By submitting, you consent to being contacted.
-            </div>
+            <button class="cta" type="submit">Get My Free Offer</button>
+            <div class="secure">Your information is secure. No spam, ever.</div>
           </form>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- BELOW THE FOLD -->
-    <div class="section">
-      <h3>How it works</h3>
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section anchor">
+    <div class="container">
+      <h3>How It Works</h3>
+      <div class="lead">We’ve simplified the home selling process to make it stress-free for Cambridge homeowners.</div>
+
       <div class="cards">
-        <div class="info"><b>1) Submit</b><br/>Share your address + contact info.</div>
-        <div class="info"><b>2) Review</b><br/>We review your property and options.</div>
-        <div class="info"><b>3) Response</b><br/>We reach out within 24 hours.</div>
+        <div class="card">
+          <div class="icon">📝</div>
+          <h4>1. Fill Out The Form</h4>
+          <p>Provide basic details about your property. It takes less than 2 minutes and is completely secure.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💬</div>
+          <h4>2. Get Your Offer</h4>
+          <p>We review your details and send you a private response quickly. No obligation.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h4>3. We Handle The Rest</h4>
+          <p>Choose your timeline. We help coordinate the next steps and keep it simple.</p>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <span><span class="check2">✓</span> Trusted by local homeowners</span>
+        <span><span class="check2">✓</span> Fast response</span>
+        <span><span class="check2">✓</span> Cambridge-focused</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="footer">
-    © <span id="y"></span> Massachusetts • Cambridge home inquiry page.
-  </div>
+  <!-- ABOUT / TESTIMONIALS placeholders (optional) -->
+  <section id="about" class="section anchor" style="padding-top: 28px;">
+    <div class="container">
+      <h3 style="font-size:38px;">About Us</h3>
+      <div class="lead" style="margin-bottom:0;">
+        This section is optional. If you want, I’ll write a clean 3-sentence version that doesn’t “tip off” your strategy.
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section anchor" style="padding-top: 28px;">
+    <div class="container">
+      <h3 style="font-size:38px;">Testimonials</h3>
+      <div class="lead" style="margin-bottom:0;">
+        Optional. You can add 2–3 short quotes later.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Cambridge Buyers • Massachusetts
+  </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
