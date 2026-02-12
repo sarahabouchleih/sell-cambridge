@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cambridge Buyers</title>
-  <meta name="description" content="Sell your Cambridge home fast & with confidence. Get a private answer within 24 hours." />
+  <title>Sell Your Boston Home Fast - Cash Offers in 24 Hours</title>
+  <meta name="description" content="Sell your Boston area home fast. We buy houses in any condition. Get a fair cash offer within 24 hours." />
 
   <!-- Google Fonts (free) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
       --nav: rgba(244,241,236,.92);
 
       /* swap this hero image */
-      --hero-image: url("https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=70");
+      --hero-image: url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=80");
     }
 
     *{ box-sizing: border-box; }
@@ -115,7 +115,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.40) 55%, rgba(0,0,0,.25) 100%);
+      background: linear-gradient(90deg, rgba(0,0,0,.50) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.15) 100%);
     }
 
     .hero-inner{
@@ -151,6 +151,7 @@
       line-height: 1.02;
       color: #fff;
       letter-spacing: -0.02em;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
     }
     .hero h1 em{
       color: var(--gold);
@@ -163,10 +164,11 @@
 
     .hero p{
       margin: 0 0 18px;
-      color: rgba(255,255,255,.82);
+      color: rgba(255,255,255,.95);
       font-size: 18px;
       line-height: 1.55;
       max-width: 52ch;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
     }
 
     .bullets{
@@ -174,8 +176,9 @@
       gap: 14px;
       flex-wrap: wrap;
       margin-top: 18px;
-      color: rgba(255,255,255,.80);
+      color: rgba(255,255,255,.95);
       font-size: 14px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
     .bullets span{
       display:inline-flex;
@@ -188,27 +191,45 @@
       background: var(--gold);
     }
 
-    /* form card */
+    /* form card - BRIGHTENED UP */
     .form-card{
-      background: var(--card);
-      border: 1px solid rgba(15,23,42,.10);
+      background: #ffffff;
+      border: 2px solid rgba(199,144,46,.35);
       border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.30), 0 0 0 1px rgba(255,255,255,.15);
+      padding: 26px;
       align-self: center;
+      position: relative;
     }
+    /* Add a subtle glow effect */
+    .form-card::before{
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(199,144,46,.6), rgba(199,144,46,.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    
     .form-card h2{
       font-family: "Playfair Display", serif;
       margin: 4px 0 6px;
       font-size: 34px;
       text-align:center;
       letter-spacing: -0.01em;
+      color: #0f172a;
     }
     .form-card .sub{
       margin: 0 0 18px;
       text-align:center;
-      color: var(--muted);
+      color: #374151;
       line-height: 1.45;
+      font-weight: 500;
     }
 
     label{
@@ -222,15 +243,16 @@
       width:100%;
       padding: 14px 14px;
       font-size: 16px;
-      border: 1px solid var(--border);
+      border: 2px solid #d1d5db;
       border-radius: 10px;
       outline: none;
-      box-shadow: 0 2px 10px rgba(0,0,0,.04);
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
       background: #fff;
+      transition: all 0.2s ease;
     }
     input:focus{
-      border-color: rgba(199,144,46,.55);
-      box-shadow: 0 0 0 4px rgba(199,144,46,.18);
+      border-color: rgba(199,144,46,.7);
+      box-shadow: 0 0 0 4px rgba(199,144,46,.20);
     }
 
     .cta{
@@ -239,51 +261,31 @@
       padding: 18px 16px;
       border: 0;
       border-radius: 12px;
-      background: #22314f;
-      color: #fff;
+      background: linear-gradient(135deg, #c7902e 0%, #a67624 100%);
+      color: #ffffff;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 17px;
       cursor: pointer;
-      box-shadow: 0 12px 30px rgba(34,49,79,.25);
+      box-shadow: 0 8px 24px rgba(199,144,46,.45);
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
     }
-    .cta:hover{ opacity: .95; }
+    .cta:hover{ 
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(199,144,46,.55);
+      background: linear-gradient(135deg, #d49d32 0%, #b8802a 100%);
+    }
+    .cta:active{
+      transform: translateY(0);
+    }
 
     .secure{
       margin-top: 14px;
       text-align:center;
       font-size: 12px;
       color: #6b7280;
+      font-weight: 500;
     }
-
-    /* categories */
-    .cat-title{
-      margin-top: 16px;
-      font-size: 13px;
-      color: #374151;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-    .cats{
-      display:grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .cat{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      padding: 12px 12px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: #fff;
-      cursor:pointer;
-    }
-    .cat:hover{ box-shadow: 0 0 0 4px rgba(34,49,79,.08); border-color: rgba(34,49,79,.25); }
-    .cat strong{ font-size: 14px; color:#0f172a; }
-    .cat span{ display:block; font-size: 12px; color:#6b7280; margin-top: 2px; }
-    .cat input{ width: 18px; height: 18px; margin: 0; accent-color: #22314f; box-shadow:none; }
 
     /* sections */
     .section{
@@ -390,7 +392,7 @@
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
-        <div class="brand"><span class="a">Cambridge</span><span class="b">Buyers</span></div>
+        <div class="brand"><span class="a">Boston</span><span class="b">HomeBuyers</span></div>
         <div class="navlinks">
           <a href="#how" class="anchor-link">How It Works</a>
           <a href="#about" class="anchor-link">About Us</a>
@@ -405,65 +407,37 @@
     <div class="container">
       <div class="hero-inner">
         <div>
-          <div class="kicker">#1 HOME BUYER IN CAMBRIDGE</div>
+          <div class="kicker">BOSTON • CAMBRIDGE • SOMERVILLE • MEDFORD & MORE</div>
 
-          <h1>Sell Your Cambridge<br/>Home <em>Fast</em> &amp; With<br/>Confidence.</h1>
+          <h1>Sell Your Boston<br/>Home <em>Fast</em> &amp;<br/>Get Cash Now.</h1>
 
           <p>
-            Skip the open houses, repairs, and months of waiting.
-            We provide a private response within 24 hours so you can move forward on your timeline.
+            We buy houses in any condition throughout Boston, Cambridge, Somerville, Medford, and the Greater Boston area. No repairs, no fees, no waiting. Get a fair cash offer within 24 hours and close on your timeline.
           </p>
 
           <div class="bullets">
-            <span><span class="dot"></span>No hidden fees</span>
-            <span><span class="dot"></span>No repairs needed</span>
-            <span><span class="dot"></span>Local Cambridge team</span>
+            <span><span class="dot"></span>Any condition</span>
+            <span><span class="dot"></span>Fast cash offers</span>
+            <span><span class="dot"></span>Close on your schedule</span>
           </div>
         </div>
 
         <div class="form-card">
-          <h2>Get Your Offer Today</h2>
-          <div class="sub">Enter your details below to receive a no-obligation response on your Cambridge home.</div>
+          <h2>Get Your Cash Offer</h2>
+          <div class="sub">Fill out the form below for a free, no-obligation cash offer on your property.</div>
 
           <form action="https://formspree.io/f/xgolepaa" method="POST">
             <label for="full_name">Full Name</label>
             <input id="full_name" name="full_name" type="text" placeholder="John Doe" required>
 
             <label for="property_address">Property Address</label>
-            <input id="property_address" name="property_address" type="text" placeholder="123 Main St, Cambridge" required>
+            <input id="property_address" name="property_address" type="text" placeholder="123 Main St, Boston, MA" required>
 
             <label for="phone_number">Phone Number</label>
             <input id="phone_number" name="phone_number" type="tel" placeholder="(617) 555-0123" required>
 
-            <div class="cat-title">Category</div>
-            <div class="cats">
-              <label class="cat">
-                <div>
-                  <strong>Just exploring</strong>
-                  <span>Not sure yet — want info</span>
-                </div>
-                <input type="radio" name="category" value="Just exploring" required>
-              </label>
-
-              <label class="cat">
-                <div>
-                  <strong>Selling soon</strong>
-                  <span>Within ~30–60 days</span>
-                </div>
-                <input type="radio" name="category" value="Selling soon">
-              </label>
-
-              <label class="cat">
-                <div>
-                  <strong>Time-sensitive</strong>
-                  <span>Need a quick plan</span>
-                </div>
-                <input type="radio" name="category" value="Time-sensitive">
-              </label>
-            </div>
-
-            <button class="cta" type="submit">Get My Free Offer</button>
-            <div class="secure">Your information is secure. No spam, ever.</div>
+            <button class="cta" type="submit">Get My Cash Offer Now</button>
+            <div class="secure">🔒 Your information is secure. No spam, ever.</div>
           </form>
         </div>
       </div>
@@ -474,57 +448,106 @@
   <section id="how" class="section anchor">
     <div class="container">
       <h3>How It Works</h3>
-      <div class="lead">We’ve simplified the home selling process to make it stress-free for Cambridge homeowners.</div>
+      <div class="lead">We've made selling your Boston home simple and stress-free.</div>
 
       <div class="cards">
         <div class="card">
           <div class="icon">📝</div>
-          <h4>1. Fill Out The Form</h4>
-          <p>Provide basic details about your property. It takes less than 2 minutes and is completely secure.</p>
+          <h4>1. Share Your Info</h4>
+          <p>Fill out our quick form with your name, property address, and phone number. Takes less than 2 minutes.</p>
         </div>
 
         <div class="card">
-          <div class="icon">💬</div>
-          <h4>2. Get Your Offer</h4>
-          <p>We review your details and send you a private response quickly. No obligation.</p>
+          <div class="icon">💰</div>
+          <h4>2. Get Your Cash Offer</h4>
+          <p>We'll review your property and send you a fair cash offer within 24 hours. No obligation to accept.</p>
         </div>
 
         <div class="card">
-          <div class="icon">🤝</div>
-          <h4>3. We Handle The Rest</h4>
-          <p>Choose your timeline. We help coordinate the next steps and keep it simple.</p>
+          <div class="icon">🏠</div>
+          <h4>3. Close When Ready</h4>
+          <p>Choose your closing date. We handle all the paperwork and can close in as little as 7 days.</p>
         </div>
       </div>
 
       <div class="trust-row">
-        <span><span class="check2">✓</span> Trusted by local homeowners</span>
-        <span><span class="check2">✓</span> Fast response</span>
-        <span><span class="check2">✓</span> Cambridge-focused</span>
+        <span><span class="check2">✓</span> Serving Boston, Cambridge, Somerville, Medford & more</span>
+        <span><span class="check2">✓</span> Any condition accepted</span>
+        <span><span class="check2">✓</span> Fast & reliable</span>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT / TESTIMONIALS placeholders (optional) -->
-  <section id="about" class="section anchor" style="padding-top: 28px;">
+  <!-- ABOUT US -->
+  <section id="about" class="section anchor">
     <div class="container">
-      <h3 style="font-size:38px;">About Us</h3>
-      <div class="lead" style="margin-bottom:0;">
-        This section is optional. If you want, I’ll write a clean 3-sentence version that doesn’t “tip off” your strategy.
+      <h3>About Us</h3>
+      <div class="lead" style="max-width: 800px; margin: 0 auto 34px; text-align: left; line-height: 1.7; color: #374151;">
+        <p style="margin-bottom: 18px;">We're <strong>Boston HomeBuyers</strong>, and we buy houses throughout Boston, Cambridge, Somerville, Medford, and the entire Greater Boston area. Whether your home is in perfect condition or needs major repairs, we're interested. We specialize in helping homeowners sell quickly without the hassle of traditional real estate listings.</p>
+        
+        <p style="margin-bottom: 18px;">Our process is simple and transparent. All you need to do is provide your property address and phone number, and we'll send you a fair cash offer. There's <strong>absolutely no obligation</strong> — you can review our offer and decide what's best for you. We've helped countless homeowners throughout Greater Boston, and our reputation is built on being fast, fair, and reliable.</p>
+        
+        <p style="margin-bottom: 0;">We handle everything from start to finish. No repairs needed, no cleaning required, and no real estate agent commissions. We work on your timeline and can close in as little as 7 days or wait until you're ready. It's truly that simple.</p>
+      </div>
+      
+      <div class="cards" style="margin-top: 40px;">
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h4>Lightning Fast</h4>
+          <p>Cash offer within 24 hours, close in as little as 7 days</p>
+        </div>
+        
+        <div class="card">
+          <div class="icon">🏆</div>
+          <h4>Reputable & Trusted</h4>
+          <p>Proven track record helping Greater Boston homeowners</p>
+        </div>
+        
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h4>Zero Obligation</h4>
+          <p>Get your cash offer with absolutely no pressure to accept</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="testimonials" class="section anchor" style="padding-top: 28px;">
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section anchor">
     <div class="container">
-      <h3 style="font-size:38px;">Testimonials</h3>
-      <div class="lead" style="margin-bottom:0;">
-        Optional. You can add 2–3 short quotes later.
+      <h3>What Our Clients Say</h3>
+      <div class="lead">We buy homes throughout Greater Boston and pride ourselves on being reputable and fast for everyone we've worked with.</div>
+      
+      <div class="cards" style="margin-top: 40px;">
+        <div class="card">
+          <div style="margin-bottom: 16px; color: #c7902e; font-size: 32px;">"</div>
+          <p style="font-style: italic; margin-bottom: 16px;">"I just filled out the form with my address and phone number, and got a fair cash offer the next day. No hassle, no obligation. They made it so easy!"</p>
+          <p style="font-weight: 700; color: #1f2937; margin: 0;">— Michael R., Dorchester</p>
+        </div>
+        
+        <div class="card">
+          <div style="margin-bottom: 16px; color: #c7902e; font-size: 32px;">"</div>
+          <p style="font-style: italic; margin-bottom: 16px;">"I needed to sell quickly and they delivered. All I did was give them my number and property info. Got my offer fast and closed in 10 days. Highly recommend!"</p>
+          <p style="font-weight: 700; color: #1f2937; margin: 0;">— Jennifer L., Quincy</p>
+        </div>
+        
+        <div class="card">
+          <div style="margin-bottom: 16px; color: #c7902e; font-size: 32px;">"</div>
+          <p style="font-style: italic; margin-bottom: 16px;">"No obligation really means no obligation. They gave me a fair cash offer, I thought about it, and decided to accept. The whole process was smooth and professional."</p>
+          <p style="font-weight: 700; color: #1f2937; margin: 0;">— Carlos M., Somerville</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px; padding: 30px; background: #fff; border-radius: 18px; box-shadow: var(--shadow2); max-width: 700px; margin-left: auto; margin-right: auto;">
+        <h4 style="font-family: 'Playfair Display', serif; font-size: 28px; margin: 0 0 14px; color: #1f2937;">Ready to Get Your Cash Offer?</h4>
+        <p style="color: #6b7280; margin: 0 0 20px; font-size: 16px;">Just fill out the form above with your property address and phone number. We'll send you a no-obligation cash offer within 24 hours!</p>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="display: inline-block; background: linear-gradient(135deg, #c7902e 0%, #a67624 100%); color: #fff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; box-shadow: 0 8px 24px rgba(199,144,46,.35); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(199,144,46,.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(199,144,46,.35)'">Get Started Now</a>
       </div>
     </div>
   </section>
 
   <footer>
-    © <span id="y"></span> Cambridge Buyers • Massachusetts
+    © <span id="y"></span> Boston HomeBuyers • Serving Boston, Cambridge, Somerville, Medford & Greater Boston Area
   </footer>
 
   <script>
