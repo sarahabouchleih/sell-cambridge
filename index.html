@@ -108,15 +108,21 @@
       background-image: var(--hero-image);
       background-size: cover;
       background-position: center;
-      filter: saturate(1.05) contrast(1.05);
+      filter: saturate(1.12) contrast(1.05) brightness(1.08);
       transform: scale(1.02);
     }
     .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.10) 50%, rgba(0,0,0,.05) 100%);
-    }
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.12) 0%,
+    rgba(0,0,0,.06) 50%,
+    rgba(0,0,0,.02) 100%
+  );
+}
+
 
     .hero-inner{
       position: relative;
