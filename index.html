@@ -466,6 +466,8 @@
           <div class="sub">Fill out the form below for a free, no-obligation cash offer on your property.</div>
 
           <form action="https://formspree.io/f/xgolepaa" method="POST" id="leadForm">
+            <input type="hidden" name="_next" value="https://sellmymasshouse.it.com/thank-you.html">
+            
             <label for="full_name">Full Name</label>
             <input id="full_name" name="full_name" type="text" placeholder="John Doe" required>
 
@@ -589,20 +591,17 @@
     © <span id="y"></span> Sell My House Mass • Serving Boston, Cambridge, Somerville, Medford & Greater Boston Area
   </footer>
 
+  <!-- Event snippet for Submit lead form conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17936332701/AANeCNjRnPcbEJ3v2uhC',
+      'value': 1.0,
+      'currency': 'USD'
+    });
+  </script>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Google Ads Conversion Tracking
-    const form = document.getElementById('leadForm');
-    
-    form.addEventListener('submit', function(e) {
-      // Fire Google Ads conversion event when form is submitted
-      gtag('event', 'conversion', {
-        'send_to': 'AW-17936332701/AANeCNjRnPcbEJ3v2uhC'
-      });
-      
-      // Form will continue to submit to Formspree normally
-    });
   </script>
 </body>
 </html>
